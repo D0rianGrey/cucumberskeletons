@@ -1,27 +1,32 @@
-Feature: Application login
+Feature: Portal login
 
-  @RegTest
+  Background:
+    Given Validate the browser
+    When Browser is triggered
+    Then Check if browser is started
+
+  @PortalTest
   Scenario: Home page default login
     Given User in on Netbanking landing page
     When User login into application with "Eugene" and password "12345"
     Then Home page is populated
     And Cards displayed are "true"
 
-  @MobileTest
+  @PortalTest
   Scenario: Home page default login
     Given User in on Netbanking landing page
     When User login into application with "Roman" and password "54321"
     Then Home page is populated
     And Cards displayed are "false"
 
-  @MobileTest
+  @PortalTest
   Scenario: Home page default login
     Given User in on Netbanking landing page
     When User login into application with "Roman" and password "54321"
     Then Home page is populated
     And Cards displayed are "false"
 
-  @SanityTest
+  @PortalTest
   Scenario: Home page default login
     Given User in on Netbanking landing page
     When User sign up with following details
@@ -29,7 +34,7 @@ Feature: Application login
     Then Home page is populated
     And Cards displayed are "false"
 
-  @SmokeTest
+  @PortalTest
   Scenario Outline: Home page default login
     Given User in on Netbanking landing page
     When User login in to application with <Username> and password <Password>
