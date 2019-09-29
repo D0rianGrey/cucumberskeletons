@@ -3,10 +3,10 @@ Feature: Application login
     Given User in on Netbanking landing page
     When User login into application with "Eugene" and password "12345"
     Then Home page is populated
-    And Cards are displayed
+    And Cards displayed are "true"
 
   Scenario: Home page default login
     Given User in on Netbanking landing page
-    When User login into application with username and password
+    When User login into application with "Roman" and password "54321"
     Then Home page is populated
-    And Cards are not displayed
+    And Cards displayed are "false"

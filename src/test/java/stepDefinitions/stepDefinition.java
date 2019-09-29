@@ -18,10 +18,10 @@ public class stepDefinition {
         System.out.println("Navigate to login url");
     }
 
-    @When("^User login into application with username and password$")
-    public void user_login_into_application_with_username_and_password() {
-
-        //code to login
+    @When("^User login into application with \"([^\"]*)\" and password \"([^\"]*)\"$")
+    public void user_login_into_application_with_something_and_password_something(String login, String password) {
+        System.out.println(login);
+        System.out.println(password);
         System.out.println("Logged is successfully ");
     }
 
@@ -32,10 +32,9 @@ public class stepDefinition {
         System.out.println("Validated homepage");
     }
 
-    @And("^Cards are displayed$")
-    public void cards_are_displayed(){
-
-        //validation he cards
+    @And("Cards displayed are {string}")
+    public void cards_displayed_are(String string) {
+        System.out.println(string);
         System.out.println("Validated cards");
     }
 
