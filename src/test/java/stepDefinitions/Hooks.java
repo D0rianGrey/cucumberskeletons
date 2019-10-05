@@ -1,9 +1,11 @@
 package stepDefinitions;
 
+import Cucumber.Base;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.WebDriver;
 
-public class Hooks {
+public class Hooks extends Base {
 
     @Before("@MobileTest")
     public void beforeValidation() {
@@ -13,6 +15,11 @@ public class Hooks {
     @After("@MobileTest")
     public void afterValidation() {
         System.out.println("After Mobile hook");
+    }
+
+    @After("@SeleniumTest1")
+    public void afterSeleniumTest() {
+        driver.close();
     }
 
 }
