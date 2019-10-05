@@ -9,7 +9,9 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = "stepDefinitions",
-        tags = "@PortalTest"
+        tags = "@MobileTest",
+        plugin = {"pretty","html:target/cucumber","json:target/cucumber.js","junit:target/cukes.xml"},
+        dryRun = true
 )
 public class TestRunner {
 
